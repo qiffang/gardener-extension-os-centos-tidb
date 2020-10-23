@@ -1,0 +1,25 @@
+#cloud-config
+write_files:
+- path: '/etc/systemd/system/abc.service.d/10-exec-start-pre-init-config.conf'
+  encoding: b64
+  content: |
+    W1NlcnZpY2VdCkV4ZWNTdGFydFByZT0vb3B0L2Jpbi9pbml0LWNvbnRhaW5lcmQ=
+- path: '/etc/systemd/system/abc.service.d/12-exec-start-pre-init-config.conf'
+  encoding: b64
+  content: |
+    W1NlcnZpY2VdCkV4ZWNTdGFydFByZT0vb3B0L2Jpbi9pbml0LWNvbnRhaW5lcmQ=
+- path: '/etc/systemd/system/mtu-customizer.service'
+  encoding: b64
+  content: |
+    W1NlcnZpY2VdCkV4ZWNTdGFydFByZT0vb3B0L2Jpbi9pbml0LWNvbnRhaW5lcmQ=
+- path: '/etc/systemd/system/other.service'
+  encoding: b64
+  content: |
+    W1NlcnZpY2VdCkV4ZWNTdGFydFByZT0vb3B0L2Jpbi9pbml0LWNvbnRhaW5lcmQ=
+
+runcmd:
+- until yum install -y yum-utils && yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo && yum install -y iptables docker-ce docker-ce-cli containerd.io socat nfs-utils logrotate jq wget; do sleep 1; done
+- systemctl daemon-reload
+- systemctl enable 'abc.service' && systemctl restart 'abc.service'
+- systemctl enable 'mtu-customizer.service' && systemctl restart 'mtu-customizer.service'
+- systemctl enable 'other.service' && systemctl restart 'other.service'

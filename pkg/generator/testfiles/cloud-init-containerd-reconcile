@@ -1,0 +1,6 @@
+#cloud-config
+write_files:
+
+runcmd:
+- until yum install -y yum-utils && yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo && yum install -y iptables docker-ce docker-ce-cli containerd.io socat nfs-utils logrotate jq wget; do sleep 1; done
+- systemctl daemon-reload
