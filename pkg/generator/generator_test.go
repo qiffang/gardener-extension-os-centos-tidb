@@ -15,14 +15,13 @@
 package generator_test
 
 import (
-	"github.com/tidbcloud/gardener-extension-os-centos8-tidb/pkg/generator"
-
 	commongen "github.com/gardener/gardener/extensions/pkg/controller/operatingsystemconfig/oscommon/generator"
 	"github.com/gardener/gardener/extensions/pkg/controller/operatingsystemconfig/oscommon/generator/test"
 	"github.com/gardener/gardener/pkg/apis/extensions/v1alpha1"
 	"github.com/gobuffalo/packr"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
+	"github.com/tidbcloud/gardener-extension-os-centos8-tidb/pkg/generator"
 )
 
 var _ = Describe("CentOS Generator Test", func() {
@@ -56,6 +55,7 @@ var _ = Describe("CentOS Generator Test", func() {
 			cloudInit, _, err := g.Generate(osc)
 
 			Expect(err).NotTo(HaveOccurred())
+
 			Expect(string(cloudInit)).To(Equal(expected))
 		})
 
