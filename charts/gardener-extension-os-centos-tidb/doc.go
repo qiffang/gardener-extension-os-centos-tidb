@@ -12,30 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package app
+//go:generate ../../vendor/github.com/gardener/gardener/hack/generate-controller-registration.sh os-centos-tidb . ../../VERSION ../../example/controller-registration.yaml OperatingSystemConfig:centos-tidb
 
-import (
-	"context"
-	"github.com/tidbcloud/gardener-extension-os-centos8-tidb/pkg/generator"
-
-	"github.com/gardener/gardener/extensions/pkg/controller/cmd"
-	"github.com/gardener/gardener/extensions/pkg/controller/operatingsystemconfig/oscommon/app"
-	"github.com/spf13/cobra"
-)
-
-var (
-	ctrlName = "centos8-tidb"
-	osTypes  = []string{"centos8-tidb"}
-)
-
-// NewControllerCommand returns a new Command with a new Generator
-func NewControllerCommand(ctx context.Context) *cobra.Command {
-	g := generator.CloudInitGenerator()
-	if g == nil {
-		cmd.LogErrAndExit(nil, "Could not create Generator")
-	}
-
-	cmd := app.NewControllerCommand(ctx, ctrlName, osTypes, g)
-
-	return cmd
-}
+// Package chart enables go:generate support for generating the correct controller registration.
+package chart

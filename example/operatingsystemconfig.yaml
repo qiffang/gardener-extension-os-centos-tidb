@@ -5,7 +5,7 @@ metadata:
   name: pool-01-original
   namespace: default
 spec:
-  type: centos8-tidb
+  type: centos-tidb
   units:
   - name: docker.service
     dropIns:
