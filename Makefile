@@ -13,7 +13,7 @@
 # limitations under the License.
 
 EXTENSION_PREFIX            := gardener-extension
-NAME                        := os-centos8-tidb
+NAME                        := os-centos-tidb
 REGISTRY                    := eu.gcr.io/gardener-project
 IMAGE_PREFIX                := $(REGISTRY)/extensions
 REPO_ROOT                   := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))

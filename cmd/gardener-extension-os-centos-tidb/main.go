@@ -16,7 +16,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/tidbcloud/gardener-extension-os-centos8-tidb/cmd/gardener-extension-os-centos8-tidb/app"
+	"github.com/tidbcloud/gardener-extension-os-centos-tidb/cmd/gardener-extension-os-centos-tidb/app"
 	"os"
 
 	extcontroller "github.com/gardener/gardener/extensions/pkg/controller"

@@ -1,7 +1,7 @@
-# Gardener Extension for Centos8 OS
+# Gardener Extension for centos OS
 
 
-This controller operates on the [`OperatingSystemConfig`](https://github.com/gardener/gardener/blob/master/docs/proposals/01-extensibility.md#cloud-config-user-data-for-bootstrapping-machines) resource in the `extensions.gardener.cloud/v1alpha1` API group. It manages those objects that are requesting [Centos OS](https://www.centos.com/) configuration (`.spec.type=centos8-tidb`).
+This controller operates on the [`OperatingSystemConfig`](https://github.com/gardener/gardener/blob/master/docs/proposals/01-extensibility.md#cloud-config-user-data-for-bootstrapping-machines) resource in the `extensions.gardener.cloud/v1alpha1` API group. It manages those objects that are requesting [Centos OS](https://www.centos.com/) configuration (`.spec.type=centos-tidb`).
 
 ```yaml
 ---
@@ -11,7 +11,7 @@ metadata:
   name: pool-01-original
   namespace: default
 spec:
-  type: centos8-tidb
+  type: centos-tidb
   units:
     ...
   files:

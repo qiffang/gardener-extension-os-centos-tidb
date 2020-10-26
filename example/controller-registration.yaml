@@ -2,11 +2,11 @@
 apiVersion: core.gardener.cloud/v1beta1
 kind: ControllerRegistration
 metadata:
-  name: os-centos8-tidb
+  name: os-centos-tidb
 spec:
   resources:
   - kind: OperatingSystemConfig
-    type: centos8-tidb
+    type: centos-tidb
   deployment:
     type: helm
     providerConfig:

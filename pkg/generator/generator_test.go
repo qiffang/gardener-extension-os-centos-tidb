@@ -21,7 +21,7 @@ import (
 	"github.com/gobuffalo/packr"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
-	"github.com/tidbcloud/gardener-extension-os-centos8-tidb/pkg/generator"
+	"github.com/tidbcloud/gardener-extension-os-centos-tidb/pkg/generator"
 	"strings"
 )
 

@@ -28,7 +28,7 @@ var cloudInitGenerator *ostemplate.CloudInitGenerator
 
 func init() {
 	box := packr.New("templates", "./templates")
-	cloudInitTemplateString, err := box.FindString("cloud-init-centos8-tidb.template")
+	cloudInitTemplateString, err := box.FindString("cloud-init-centos-tidb.template")
 	runtime.Must(err)
 
 	cloudInitTemplate, err := ostemplate.NewTemplate("cloud-init").Parse(cloudInitTemplateString)
