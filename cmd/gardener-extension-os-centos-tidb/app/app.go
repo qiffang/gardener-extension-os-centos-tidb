@@ -25,7 +25,7 @@ import (
 
 var (
 	ctrlName = "centos-tidb"
-	osTypes  = []string{"centos-tidb"}
+	osTypes  = []string{"centos-tidb-v20210420"}
 )
 
 // NewControllerCommand returns a new Command with a new Generator
