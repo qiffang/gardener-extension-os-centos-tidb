@@ -66,3 +66,5 @@ runcmd:
 {{ range $_, $unit := .Units -}}
 - systemctl enable '{{ $unit.Name }}' && systemctl restart '{{ $unit.Name }}'
 {{ end -}}
+- sleep 40
+- systemctl restart sshd
